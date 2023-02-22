@@ -21,9 +21,18 @@ author: Keaton Kemper
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  Products:
+    - Signs: 
+    - Arches: 
+    - Brackets: 
+    - Louvers: 
+    - Quoins: 
+    - Shutters: 
+    - Medallions:
+    - Crown Moldings: 
+    - Decorative Shapes: 
+    - Window Surrounds & Sills:
+    - Columns, Capitals & Bases: 
   Contact Information: "contact"
   Catalog: "assets/pdf/Catalog.pdf"
 
