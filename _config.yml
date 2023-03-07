@@ -22,17 +22,18 @@ author: Keaton Kemper
 navbar-links:
   About us: "aboutus"
   Products:
-    - Signs: 
-    - Arches: 
-    - Brackets: 
-    - Louvers: 
-    - Quoins: 
-    - Shutters: 
-    - Medallions:
-    - Crown Moldings: 
-    - Decorative Shapes: 
-    - Window Surrounds & Sills:
-    - Columns, Capitals & Bases: 
+    - Signs: "signs"
+    - Arches: "arches"
+    - Brackets: "brackets"
+    - Louvers: "louvers"
+    - Quoins: "quoins"
+    - Shutters: "shutters"
+    - Medallions: "medallions"
+    - Crown Moldings: "moldings"
+    - Decorative Shapes: "decorative"
+    - Window Surrounds & Sills: "window"
+    - Columns, Capitals & Bases: "columns"
+  Finishes: "finshes"
   Contact Information: "contact"
   Catalog: "assets/pdf/Catalog.pdf"
 
