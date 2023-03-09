@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About American Design Pluss
+title: About American Design Plus
 subtitle: Family owned and operated since 2014
 ---
 
