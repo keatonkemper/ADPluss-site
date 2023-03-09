@@ -5,7 +5,7 @@ subtitle:
 ---
 <img src="/assets/img/column_1.png" width="500" height="800>
 
-![column_1](/assets/img/column_1.png Column 1)"
+![column_1](/assets/img/column_1.png)
                                                         
 <div class="gallery">
   <a target="_blank" href="assets/img/column_1.png">
