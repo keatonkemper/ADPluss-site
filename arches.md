@@ -4,11 +4,7 @@ title: Arches
 subtitle: 
 ---
 <div class="gallery">
-  <div class="gallery-container">
-    <div class="gallery-inner">
-      {% for i in (1..6) %}
-        <img src="/assets/img/bracket_{{ i }}.png" alt="Bracket {{ i }}">
-      {% endfor %}
-    </div>
-  </div>
+  {% for i in (1..6) %}
+    <img src="/assets/img/bracket_{{ i }}.png" alt="Bracket {{ i }}">
+  {% endfor %}
 </div>
