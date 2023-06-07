@@ -53,19 +53,27 @@
       }, 0);
 
       banner.style.width = totalImagesWidth + 'px';
+
+      var cloneImages = Array.from(images).map(function(img) {
+        return img.cloneNode(true);
+      });
+
+      cloneImages.forEach(function(img) {
+        banner.appendChild(img);
+      });
     }
 
     function startBannerScroll() {
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
-      var scrollDistance = 0;
+      var currentPosition = 0;
 
       setInterval(function() {
-        scrollDistance -= 2;
-        banner.style.transform = 'translateX(' + scrollDistance + 'px)';
+        currentPosition -= 1;
+        banner.style.transform = 'translateX(' + currentPosition + 'px)';
 
-        if (scrollDistance <= -bannerWidth) {
-          scrollDistance = 0;
+        if (currentPosition <= -bannerWidth) {
+          currentPosition = 0;
         }
       }, 10); // Adjust the interval as needed (milliseconds)
     }
