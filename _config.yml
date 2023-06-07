@@ -24,7 +24,7 @@ navbar-links:
   Products:
     - Signs: "signs"
     - Arches: "arches"
-    - Brackets: "brackets"
+    - Brackets: "brackets.html"
     - Louvers: "louvers"
     - Quoins: "quoins"
     - Shutters: "shutters"
