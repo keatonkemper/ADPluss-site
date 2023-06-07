@@ -8,6 +8,24 @@ subtitle:
     <img src="/assets/img/bracket_{{ i }}.png" alt="Bracket {{ i }}">
   {% endfor %}
 </div>--->
+
+<div class="banner-container">
+  <div class="banner">
+    <img src="/assets/img/bracket_1.png" alt="Bracket 1">
+    <img src="/assets/img/bracket_2.png" alt="Bracket 2">
+    <img src="/assets/img/bracket_3.png" alt="Bracket 3">
+    <img src="/assets/img/bracket_4.png" alt="Bracket 4">
+    <img src="/assets/img/bracket_5.png" alt="Bracket 5">
+    <img src="/assets/img/bracket_6.png" alt="Bracket 6">
+  </div>
+</div>
+
+{% raw %}
+<script>
+window.addEventListener('load', function() {
+  adjustBannerWidth();
+});
+
 window.addEventListener('resize', function() {
   adjustBannerWidth();
 });
@@ -21,7 +39,5 @@ function adjustBannerWidth() {
     images[i].style.width = bannerWidth + 'px';
   }
 }
-
-window.addEventListener('load', function() {
-  adjustBannerWidth();
-});
+</script>
+{% endraw %}
