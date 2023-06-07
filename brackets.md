@@ -26,15 +26,15 @@ window.addEventListener('load', function() {
 function startBannerScroll() {
   var banner = document.querySelector('.banner');
   var bannerWidth = banner.offsetWidth;
-  var scrollDistance = banner.scrollWidth - bannerWidth;
+  var scrollDistance = bannerWidth;
   var currentPosition = 0;
 
   setInterval(function() {
-    currentPosition += 1;
-    if (currentPosition > scrollDistance) {
+    currentPosition -= 1;
+    if (currentPosition < -scrollDistance) {
       currentPosition = 0;
     }
-    banner.style.transform = 'translateX(-' + currentPosition + 'px)';
+    banner.style.transform = 'translateX(' + currentPosition + 'px)';
   }, 10);
 }
 </script>
