@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brackets0</title>
+  <title>Brackets1</title>
   <style>
     .banner-container {
       width: 100%;
@@ -53,19 +53,25 @@
       }, 0);
 
       banner.style.width = totalImagesWidth + 'px';
+
+      var cloneImages = Array.from(images).map(function(img) {
+        return img.cloneNode(true);
+      });
+
+      cloneImages.forEach(function(img) {
+        banner.appendChild(img);
+      });
     }
 
     function startBannerScroll() {
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
-      var scrollDistance = 0;
 
       setInterval(function() {
-        scrollDistance -= 2;
-        banner.style.transform = 'translateX(' + scrollDistance + 'px)';
+        banner.style.transform = 'translateX(-1px)';
 
-        if (scrollDistance <= -bannerWidth) {
-          scrollDistance = 0;
+        if (banner.scrollLeft <= 0) {
+          banner.scrollLeft += bannerWidth;
         }
       }, 10); // Adjust the interval as needed (milliseconds)
     }
