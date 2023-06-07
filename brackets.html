@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brackets1</title>
+  <title>Brackets0</title>
   <style>
     .banner-container {
       width: 100%;
@@ -58,16 +58,16 @@
     function startBannerScroll() {
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
-      var scrollDistance = bannerWidth;
+      var scrollDistance = 0;
 
       setInterval(function() {
-        banner.style.transform = 'translateX(-' + scrollDistance + 'px)';
-        scrollDistance += bannerWidth;
+        scrollDistance -= 2;
+        banner.style.transform = 'translateX(' + scrollDistance + 'px)';
 
-        if (scrollDistance >= banner.scrollWidth) {
+        if (scrollDistance <= -bannerWidth) {
           scrollDistance = 0;
         }
-      }, 2000); // Adjust the interval as needed (milliseconds)
+      }, 10); // Adjust the interval as needed (milliseconds)
     }
   </script>
 </head>
