@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrolling Banner Example</title>
+  <style>
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner {
+      display: flex;
+      animation: scroll 30s linear infinite;
+    }
+
+    .banner img {
+      width: 300px; /* Adjust the image width as needed */
+      height: auto;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner-container">
+    <div class="banner">
+      <img src="/assets/img/bracket_1.png" alt="Bracket 1">
+      <img src="/assets/img/bracket_2.png" alt="Bracket 2">
+      <img src="/assets/img/bracket_3.png" alt="Bracket 3">
+      <img src="/assets/img/bracket_4.png" alt="Bracket 4">
+      <img src="/assets/img/bracket_5.png" alt="Bracket 5">
+      <img src="/assets/img/bracket_6.png" alt="Bracket 6">
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      adjustBannerWidth();
+      startBannerScroll();
+    });
+
+    function adjustBannerWidth() {
+      var banner = document.querySelector('.banner');
+      var images = banner.querySelectorAll('img');
+      var bannerWidth = banner.offsetWidth;
+
+      for (var i = 0; i < images.length; i++) {
+        images[i].style.width = bannerWidth + 'px';
+      }
+    }
+
+    function startBannerScroll() {
+      var banner = document.querySelector('.banner');
+      var bannerWidth = banner.offsetWidth;
+      var scrollDistance = banner.scrollWidth - bannerWidth;
+      var currentPosition = 0;
+
+      setInterval(function() {
+        currentPosition += 1;
+        if (currentPosition > scrollDistance) {
+          currentPosition = 0;
+        }
+        banner.style.transform = 'translateX(-' + currentPosition + 'px)';
+      }, 10);
+    }
+  </script>
+</body>
+</html>
