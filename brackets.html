@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brackets</title>
+  <title>Brackets0</title>
   <style>
     .banner-container {
       width: 100%;
       overflow: hidden;
     }
-
     .banner {
       display: flex;
       animation: scroll linear infinite;
     }
-
     .banner img {
       height: 35%;
       max-width: 100%;
       width: auto;
     }
-
     @keyframes scroll {
       0% {
         transform: translateX(0);
@@ -33,7 +30,6 @@
       adjustBannerHeight();
       startBannerScroll();
     });
-
     function adjustBannerHeight() {
       var banner = document.querySelector('.banner');
       var images = banner.querySelectorAll('img');
@@ -43,35 +39,27 @@
           return img.offsetHeight;
         })
       );
-
       images.forEach(function(img) {
         img.style.height = shortestHeight + 'px';
       });
-
       var totalImagesWidth = Array.from(images).reduce(function(total, img) {
         return total + img.offsetWidth;
       }, 0);
-
       banner.style.width = totalImagesWidth + 'px';
-
       var cloneImages = Array.from(images).map(function(img) {
         return img.cloneNode(true);
       });
-
       cloneImages.forEach(function(img) {
         banner.appendChild(img);
       });
     }
-
     function startBannerScroll() {
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
       var currentPosition = 0;
-
       setInterval(function() {
         currentPosition -= 1;
         banner.style.transform = 'translateX(' + currentPosition + 'px)';
-
         if (currentPosition <= -bannerWidth) {
           currentPosition = 0;
         }
