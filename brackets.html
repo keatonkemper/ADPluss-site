@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scrolling Banner Example</title>
+  <title>Brackets</title>
   <style>
     .banner-container {
       width: 100%;
@@ -10,13 +10,13 @@
 
     .banner {
       display: flex;
-      animation: scroll linear infinite;
+      animation: scroll 30s linear infinite;
     }
 
     .banner img {
-      height: auto;
+      height: 35%;
       max-width: 100%;
-      width: 35%;
+      width: auto;
     }
 
     @keyframes scroll {
@@ -53,10 +53,6 @@
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
       var scrollDistance = banner.scrollWidth - bannerWidth;
-
-      var clonedImages = banner.innerHTML;
-      banner.innerHTML += clonedImages;
-
       var currentPosition = 0;
 
       setInterval(function() {
