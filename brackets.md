@@ -38,4 +38,4 @@ function startBannerScroll() {
   }, 10);
 }
 </script>
-{% 
+{% endraw %}
