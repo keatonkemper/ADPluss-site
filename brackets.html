@@ -12,15 +12,11 @@
       display: flex;
       animation: scroll linear infinite;
     }
-    
-    .banner {
-      display: flex;
-    }
 
     .banner img {
-      height: 35%;
+      height: auto;
       max-width: 100%;
-      width: auto;
+      width: 35%;
     }
 
     @keyframes scroll {
@@ -57,6 +53,10 @@
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
       var scrollDistance = banner.scrollWidth - bannerWidth;
+
+      var clonedImages = banner.innerHTML;
+      banner.innerHTML += clonedImages;
+
       var currentPosition = 0;
 
       setInterval(function() {
@@ -70,24 +70,14 @@
   </script>
 </head>
 <body>
-<div class="banner-container">
-    <div class="banner-wrapper">
-      <div class="banner">
-        <img src="/assets/img/bracket_1.png" alt="Bracket 1">
-        <img src="/assets/img/bracket_2.png" alt="Bracket 2">
-        <img src="/assets/img/bracket_3.png" alt="Bracket 3">
-        <img src="/assets/img/bracket_4.png" alt="Bracket 4">
-        <img src="/assets/img/bracket_5.png" alt="Bracket 5">
-        <img src="/assets/img/bracket_6.png" alt="Bracket 6">
-      </div>
-      <div class="banner">
-        <img src="/assets/img/bracket_1.png" alt="Bracket 1">
-        <img src="/assets/img/bracket_2.png" alt="Bracket 2">
-        <img src="/assets/img/bracket_3.png" alt="Bracket 3">
-        <img src="/assets/img/bracket_4.png" alt="Bracket 4">
-        <img src="/assets/img/bracket_5.png" alt="Bracket 5">
-        <img src="/assets/img/bracket_6.png" alt="Bracket 6">
-      </div>
+  <div class="banner-container">
+    <div class="banner">
+      <img src="/assets/img/bracket_1.png" alt="Bracket 1">
+      <img src="/assets/img/bracket_2.png" alt="Bracket 2">
+      <img src="/assets/img/bracket_3.png" alt="Bracket 3">
+      <img src="/assets/img/bracket_4.png" alt="Bracket 4">
+      <img src="/assets/img/bracket_5.png" alt="Bracket 5">
+      <img src="/assets/img/bracket_6.png" alt="Bracket 6">
     </div>
   </div>
 </body>
