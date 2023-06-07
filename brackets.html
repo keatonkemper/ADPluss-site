@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brackets3</title>
+  <title>Brackets0</title>
   <style>
     .banner-container {
       width: 100%;
@@ -32,6 +32,7 @@
     window.addEventListener('load', function() {
       adjustBannerHeight();
       startBannerScroll();
+      window.addEventListener('resize', adjustBannerScroll);
     });
 
     function adjustBannerHeight() {
@@ -49,22 +50,33 @@
       });
     }
 
-    function startBannerScroll() {
+    function adjustBannerScroll() {
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
-     
-      // Calculate the total width of all images in the banner
       var totalImagesWidth = Array.from(banner.querySelectorAll('img')).reduce(function(total, img) {
         return total + img.offsetWidth;
       }, 0);
 
-      // Calculate the scroll distance
-      var scrollDistance = totalImagesWidth - bannerWidth;
+      var windowWidth = window.innerWidth;
+      var scrollDistance = Math.max(totalImagesWidth - windowWidth, 0);
       var currentPosition = 0;
-      
+
+      banner.style.transform = 'translateX(0)';
+
+      if (scrollDistance === 0) {
+        banner.style.animation = 'none';
+      } else {
+        banner.style.animation = 'scroll 10s linear infinite';
+      }
+    }
+
+    function startBannerScroll() {
       setInterval(function() {
+        var banner = document.querySelector('.banner');
+        var currentPosition = -parseInt(getComputedStyle(banner).transform.match(/(-?[0-9]+)/g)[4], 10);
+
         currentPosition += 5;
-        if (currentPosition > scrollDistance) {
+        if (currentPosition > banner.scrollWidth) {
           currentPosition = 0;
         }
         banner.style.transform = 'translateX(-' + currentPosition + 'px)';
