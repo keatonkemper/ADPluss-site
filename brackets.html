@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brackets2</title>
+  <title>Brackets3</title>
   <style>
     .banner-container {
       width: 100%;
@@ -52,11 +52,18 @@
     function startBannerScroll() {
       var banner = document.querySelector('.banner');
       var bannerWidth = banner.offsetWidth;
-      var scrollDistance = banner.scrollWidth - bannerWidth;
-      var currentPosition = 0;
+     
+      // Calculate the total width of all images in the banner
+      var totalImagesWidth = Array.from(banner.querySelectorAll('img')).reduce(function(total, img) {
+        return total + img.offsetWidth;
+      }, 0);
 
+      // Calculate the scroll distance
+      var scrollDistance = totalImagesWidth - bannerWidth;
+      var currentPosition = 0;
+      
       setInterval(function() {
-        currentPosition += 1;
+        currentPosition += 5;
         if (currentPosition > scrollDistance) {
           currentPosition = 0;
         }
