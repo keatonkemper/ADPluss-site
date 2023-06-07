@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brackets0</title>
+  <title>Brackets2</title>
   <style>
     .banner-container {
       width: 100%;
@@ -32,11 +32,12 @@
     window.addEventListener('load', function() {
       adjustBannerHeight();
       startBannerScroll();
-      window.addEventListener('resize', adjustBannerScroll);
+      window.addEventListener('resize', adjustBannerHeight);
     });
 
     function adjustBannerHeight() {
-      var banner = document.querySelector('.banner');
+      var bannerContainer = document.querySelector('.banner-container');
+      var banner = bannerContainer.querySelector('.banner');
       var images = banner.querySelectorAll('img');
       var shortestHeight = Math.min.apply(
         null,
@@ -48,17 +49,13 @@
       images.forEach(function(img) {
         img.style.height = shortestHeight + 'px';
       });
-    }
 
-    function adjustBannerScroll() {
-      var banner = document.querySelector('.banner');
-      var bannerWidth = banner.offsetWidth;
       var totalImagesWidth = Array.from(banner.querySelectorAll('img')).reduce(function(total, img) {
         return total + img.offsetWidth;
       }, 0);
 
-      var windowWidth = window.innerWidth;
-      var scrollDistance = Math.max(totalImagesWidth - windowWidth, 0);
+      var bannerWidth = bannerContainer.offsetWidth;
+      var scrollDistance = Math.max(totalImagesWidth - bannerWidth, 0);
       var currentPosition = 0;
 
       banner.style.transform = 'translateX(0)';
