@@ -8,6 +8,6 @@ title: Finishes Gallery
 {% for finish in site.data.finishes %}
 ### {{ finish.name }}
 
-![{{ finish.name }}]({{ finish.image }})
+![{{ finish.name }}]({{ finish.image_path }})
 
 {% endfor %}
