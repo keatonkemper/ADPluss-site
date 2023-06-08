@@ -16,7 +16,7 @@ images:
     alt: Bracket 6
 ---
 
-{% include bracket.html images=page.images %}
+{% include bracket.html %}
 <!---
 ---
 layout: page
