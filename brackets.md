@@ -1,4 +1,11 @@
 ---
+layout: page
+title: Brackets
+subtitle: 
+---
+{% include bracket.html}
+<!---
+---
 layout: gallery
 title: Brackets
 images:
@@ -15,3 +22,4 @@ images:
   - path: /assets/img/bracket_6.png
     alt: Bracket 6
 ---
+--->
