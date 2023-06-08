@@ -1,3 +1,4 @@
+<!---
 ---
 layout: gallery
 title: Brackets
@@ -17,11 +18,11 @@ images:
 ---
 
 {% include bracket.html images=page.images %}
-<!---
+--->
 ---
 layout: page
 title: Brackets
 subtitle: 
 ---
 {% include bracket.html %}
---->
+
