@@ -1,0 +1,20 @@
+- name: Preacast
+  image: /assets/img/Finish_Precast.png
+- name: Rustic Coral
+  image: /assets/img/Finish_Rustic_Coral.jpg
+- name: Coral
+  image: /assets/img/Finish_Coral.jpg
+- name: Raw Foam
+  image: /assets/img/Raw_Foam.jpg
+- name: Texture
+  image: /assets/img/Finish_Texture.jpg
+- name: Light Sand
+  image: /assets/img/Finish_Light_Sand.jpg
+- name: Sand
+  image: /assets/img/Finish_Sand.jpg
+- name: Wood Grain
+  image: /assets/img/Finish_Wood_Grain.jpg
+- name: Smooth 2
+  image: /assets/img/Finish_Smooth_2.jpg
+- name: Smooth
+  image: /assets/img/Finish_Smooth.jpg
