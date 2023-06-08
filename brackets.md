@@ -3,7 +3,7 @@ layout: page
 title: Brackets
 subtitle: 
 ---
-{% include bracket.html}
+{% include bracket.html %}
 <!---
 ---
 layout: gallery
