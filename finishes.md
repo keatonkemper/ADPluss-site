@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Finishes
-subtitle: 
+title: Finishes Gallery
 ---
+
 ## Finishes Gallery
 
-{% for finish in finishes %}
+{% for finish in site.data.finishes %}
 ### {{ finish.name }}
 
 ![{{ finish.name }}]({{ finish.image }})
