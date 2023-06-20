@@ -1,0 +1,98 @@
+
+<html>
+<head>
+  <title>Brackets</title>
+  <style>
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner {
+      display: flex;
+      animation: scroll linear infinite;
+    }
+
+    .banner img {
+      height: 35%;
+      max-width: 100%;
+      width: auto;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+      adjustBannerHeight();
+      startBannerScroll();
+    });
+
+    function adjustBannerHeight() {
+      var banner = document.querySelector('.banner');
+      var images = banner.querySelectorAll('img');
+      var shortestHeight = Math.min.apply(
+        null,
+        Array.from(images).map(function(img) {
+          return img.offsetHeight;
+        })
+      );
+
+      images.forEach(function(img) {
+        img.style.height = shortestHeight + 'px';
+      });
+
+      var totalImagesWidth = Array.from(images).reduce(function(total, img) {
+        return total + img.offsetWidth;
+      }, 0);
+
+      banner.style.width = totalImagesWidth + 'px';
+
+      var cloneImages = Array.from(images).map(function(img) {
+        return img.cloneNode(true);
+      });
+
+      cloneImages.forEach(function(img) {
+        banner.appendChild(img);
+      });
+    }
+
+    function startBannerScroll() {
+      var banner = document.querySelector('.banner');
+      var bannerWidth = banner.offsetWidth;
+      var currentPosition = 0;
+
+      setInterval(function() {
+        currentPosition -= 1;
+        banner.style.transform = 'translateX(' + currentPosition + 'px)';
+
+        if (currentPosition <= -bannerWidth) {
+          currentPosition = 0;
+        }
+      }, 25); // Adjust the interval as needed (milliseconds)
+    }
+  </script>
+</head>
+<body>
+  <div class="banner-container">
+    <div class="banner">
+      <img src="/assets/img/decorative_1.png" alt="Decorative 1">
+      <img src="/assets/img/decorative_2.png" alt="Decorative 2">
+      <img src="/assets/img/decorative_3.jpg" alt="Decorative 3">
+      <img src="/assets/img/decorative_4.jpg" alt="Decorative 4">
+      <img src="/assets/img/decorative_5.jpg" alt="Decorative 5">
+      <img src="/assets/img/decorative_6.jpg" alt="Decorative 6">
+      <img src="/assets/img/decorative_7.jpg" alt="Decorative 3">
+      <img src="/assets/img/decorative_8.jpg" alt="Decorative 4">
+      <img src="/assets/img/decorative_9.jpg" alt="Decorative 5">
+      <img src="/assets/img/decorative_10.png" alt="Decorative 6">
+    </div>
+  </div>
+</body>
+</html>
