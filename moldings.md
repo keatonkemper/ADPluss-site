@@ -1,6 +1,6 @@
 ---
 layout: page
-title: crown moldings
+title: Crown Moldings
 subtitle: 
 ---
 {% include crown.html %}
